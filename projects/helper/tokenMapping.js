@@ -35,6 +35,9 @@ const ibcMappings = {
 }
 
 const fixBalancesTokens = {
+  ancient8: {
+    [ADDRESSES.nul]: { coingeckoId: "ethereum", decimals: 18, },
+  },
   area: {
     '0x1d1bc800e71576a59f9ef88bb679fa13c2e10abf': { coingeckoId: 'areon-network', decimals: 18, },
   },
@@ -142,6 +145,20 @@ const fixBalancesTokens = {
     [ADDRESSES.null]: { coingeckoId: "ethereum", decimals: 18, },
     [ADDRESSES.zora.USDzC]: { coingeckoId: "usd-coin", decimals: 6, },
   },
+  acala: {
+    ACA: { coingeckoId: "acala", decimals: 12 },
+    LDOT: { coingeckoId: "liquid-staking-dot", decimals: 10 },
+    DOT: { coingeckoId: "polkadot", decimals: 10 },
+  },
+  karura: {
+    KSM: { coingeckoId: "kusama", decimals: 12 },
+    LKSM: { coingeckoId: "liquid-ksm", decimals: 12 },
+    KAR: { coingeckoId: "karura", decimals: 12 },
+    BNC: { coingeckoId: "bifrost-native-coin", decimals: 12 },
+    PHA: { coingeckoId: "pha", decimals: 12 },
+    KINT: { coingeckoId: "kintsugi", decimals: 12 },
+    KBTC: { coingeckoId: "kintsugi-btc", decimals: 8 },
+  }
 }
 
 ibcChains.forEach(chain => fixBalancesTokens[chain] = { ...ibcMappings, ...(fixBalancesTokens[chain] || {}) })
